@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>
+    Bus Arrival App - Leow Kean Tat (Kaz)
+  </title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Bus Arrival App</h1>
+  <img id="portrait" src="bus.png" alt="" height="250px">
+
+  <div class="table-group">
+    <div class="table-row-group">
+      <label for="bus-stop-id" class="table-cell input-header-text">Bus Stop ID:</label>
+      <input id="bus-stop-id" class="table-cell input-field" type="text" name="bus-stop-id" placeholder="Enter bus stop ID: ">
+    </div>
+  </div>
+
+  <button id="submit" onclick="getBusTiming()" style="margin: 15px 0px;">Submit</button>
+
+  <div id="bus-arrival-info" class="hidden"></div>
+  <div id="warning" class="hidden"></div>
+  
+  <table id="list-table" class="list-table-border hidden">
+    <tr class="list-table-border">
+      <th class="list-table-border">Bus Number</th>
+      <th class="list-table-border">Bus Operator</th>
+      <th class="list-table-border">Destination Bus Stop Code/ID</th>
+      <th class="list-table-border">Arrival ETA (Minutes)</th>
+    </tr>
+  </table>
+
+  <script type="module" src="script.js"/></script>
+  <script type="module" src="sg-bus-api.js"/></script>
+</body>
+
+</html>
