@@ -1,4 +1,4 @@
-//const baseUrl = "https://sg-bus-arrivals.sigma-schoolsc1.repl.co/";
+//const baseUrl = "https://2t8td6-8080.csb.app/";"
 const baseUrl = "https://arrivelah2.busrouter.sg/";
 
 export async function getBusTiming(busStopId) {
