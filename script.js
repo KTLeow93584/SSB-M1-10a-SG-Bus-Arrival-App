@@ -21,7 +21,22 @@ const busStopIDIdentifier = "Bus Stop ID";
 
 const milisecondsPerMin = 60000;
 const minutesPerHour = 60;
+let busTimer = null;
+// 🧠🧠🧠 challenge, 5 second interval.
+const timerInterval = 5000;
 // ====================================
+function startBusTimer() {
+  busTimer = setInterval(getBusTiming, timerInterval);
+}
+
+function onTriggerBusAPIQuery() {
+  if (busTimer !== null)
+    clearInterval(busTimer);
+  
+  getBusTiming();
+  startBusTimer();
+}
+
 function getBusTiming() {
   hideWarning();
   hideInfo();
@@ -29,6 +44,8 @@ function getBusTiming() {
   clearTableDataRows();
 
   const idInput = busIDInput.value;
+  if (idInput === null || idInput.trim().length === 0)
+    return;
 
   const requiredFields = [];
   const invalidFields = [];
@@ -189,4 +206,4 @@ function clearTableDataRows() {
     scheduleTable.deleteRow(i);
 }
 // ====================================
-window.getBusTiming = getBusTiming;
+window.onTriggerBusAPIQuery = onTriggerBusAPIQuery;
