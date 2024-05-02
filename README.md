@@ -19,6 +19,8 @@
   </a>
 </div>
 
+<br/>
+
 <div align="center">
   <a href="./assets/preview-3.png">
     <img align=top src="./assets/preview-3.png" width="40%" height="auto">
